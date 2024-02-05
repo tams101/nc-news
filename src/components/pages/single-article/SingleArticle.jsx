@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getArticleById } from "../../../../utils/api"
+import CommentsList from "./CommentsList"
 
 export default function SingleArticle() {
   const {article_id} = useParams()
@@ -18,6 +19,7 @@ export default function SingleArticle() {
 
 
   return (
+    <div className="single-article-page">
       <section className="single-article-container">
         <h2>{article.title}</h2>
         <img className="single-article-img" src={article.article_img_url}/>
@@ -27,5 +29,11 @@ export default function SingleArticle() {
         <p>{article.body}</p>
         <p>Votes: {article.votes}</p>
       </section>
+
+      <section className="comments-container">
+        <CommentsList article_id={article_id}/>
+      </section>
+    </div>
+      
     )
 }
