@@ -9,3 +9,10 @@ export function getArticles() {
     return res;
   });
 }
+
+export function getArticleById(article_id) {
+  return newsApi.get(`/articles/${article_id}`)
+  .then((res) => {
+    return res.data.article
+  })
+}

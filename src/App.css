@@ -12,6 +12,7 @@ header {
 .nav-items {
   display: flex;
   justify-content: space-between;
+  padding-left: 0;
 }
 
 .nav-items li {
@@ -31,4 +32,16 @@ header {
   border: 1px solid grey;
   margin-bottom: 6px;
   border-radius: 4px;
+}
+
+/* Single Article */
+.single-article-container {
+  border: 1px solid grey;
+  padding: 10px;
+}
+
+.single-article-img {
+  width: 300px;
+  display: block;
+  margin: auto;
 }
