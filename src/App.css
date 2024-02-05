@@ -45,3 +45,13 @@ header {
   display: block;
   margin: auto;
 }
+
+/* Comments List */
+.comment-list-item {
+  border: 1px solid;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  padding: 6px;
+  background-color: #F4FAFF ;
+  border-radius: 8px;
+}
