@@ -8,8 +8,8 @@ export default function ArticlesList() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    getArticles().then(({data}) => {
-      setArticles(data.articles)
+    getArticles().then((articles) => {
+      setArticles(articles)
       setIsLoading(false)
     }).catch((err) => {
       setError('Error fetching data');
