@@ -11,6 +11,7 @@ export default function ArticlesList() {
     getArticles().then((articles) => {
       setArticles(articles)
       setIsLoading(false)
+      setError(null)
     }).catch((err) => {
       setError('Error fetching data');
       setIsLoading(false)
