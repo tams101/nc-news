@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  padding: 10px;
+  font-family: 'Inter', sans-serif;
+}
+
+header {
+  height: 100px;
+}
+
+/* Navbar */
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-items li {
+  list-style: none;
+  border: 1px solid red;
+  border-radius: 4px;
+}
+
+/* Article card */
+.article-item-img {
+  width: 200px;
+  border-radius: 6px;
+}
+
+.article-list-item {
+  text-align: center;
+  border: 1px solid grey;
+  margin-bottom: 6px;
+  border-radius: 4px;
+}
