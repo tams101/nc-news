@@ -7,19 +7,23 @@ const newsApi = axios.create({
 export function getArticles() {
   return newsApi.get(`/articles`).then((res) => {
     return res.data.articles;
-  });
+  })
 }
 
 export function getArticleById(article_id) {
-  return newsApi.get(`/articles/${article_id}`)
-  .then((res) => {
-    return res.data.article
-  })
+  return newsApi
+    .get(`/articles/${article_id}`)
+    .then((res) => {
+      return res.data.article;
+    })
 }
 
 export function getCommentsByArticleId(article_id) {
-  return newsApi.get(`/articles/${article_id}/comments`)
-  .then((res) => {
-    return res.data.comments
-  })
+  return newsApi.get(`/articles/${article_id}/comments`).then((res) => {
+    return res.data.comments;
+  });
+}
+
+export function patchVotesByArticleId(article_id, vote) {
+  return newsApi.patch(`/articles/${article_id}`, { inc_votes: vote });
 }
