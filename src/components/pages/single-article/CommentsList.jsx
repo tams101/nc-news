@@ -15,7 +15,7 @@ export default function CommentsList({article_id, setComments, comments}) {
       setError('Comments could not be retrieved.')
       setIsLoading(false)
     })
-  },  [comments])
+  },  [])
 
   if(loading) return <p>Loading comments...</p>
   if(error) return <p>{error}</p>
@@ -24,7 +24,7 @@ export default function CommentsList({article_id, setComments, comments}) {
     <div className="comments-list-container">
       <h3>Comments</h3>
       {comments.map((comment) => {
-        return <CommentCard comment={comment} key={comment.comment_id}/>
+        return <CommentCard comment={comment} key={comment.comment_id} setComments={setComments}/>
       })}
     </div>
     )
