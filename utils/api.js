@@ -32,6 +32,10 @@ export function addCommentByArticleId(article_id, user) {
   });
 }
 
+export function deleteAComment(comment_id) {
+  return newsApi.delete(`comments/${comment_id}`)
+}
+
 export function getUsers() {
   return newsApi.get("/users").then((res) => {
     return res.data.users;
