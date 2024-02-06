@@ -61,6 +61,10 @@ header {
   margin-right: auto;
 }
 
+textarea {
+  resize:none;
+}
+
 
 /* Comments List */
 .comment-list-item {

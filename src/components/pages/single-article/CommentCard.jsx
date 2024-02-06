@@ -21,6 +21,7 @@ export default function CommentCard({comment}) {
       setError(null)
       
     }).catch((err) => {
+      console.log(comment.comment_id)
         setError('Your comment could not be deleted.')
         setIsDeleted(false)
         setSubmitted(false)
