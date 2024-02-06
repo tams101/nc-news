@@ -2,12 +2,14 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getArticleById, patchVotesByArticleId } from "../../../../utils/api"
 import CommentsList from "./CommentsList"
+import CommentForm from "./CommentForm"
 
 export default function SingleArticle() {
   const {article_id} = useParams()
 
   const [article, setArticle] = useState({})
   const [votes, setVotes] = useState(0)
+  const [comments, setComments] = useState([])
   const [fetchError, setFetchError] = useState(null)
   const [voteError, setVoteError] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
@@ -19,7 +21,6 @@ export default function SingleArticle() {
       setIsLoading(false)
       setFetchError(null)
     }).catch((err) => {
-      console.log(err)
       setFetchError('Error fetching article')
       setIsLoading(false)
     })
@@ -63,7 +64,8 @@ export default function SingleArticle() {
       </section>
 
       <section className="comments-container">
-        <CommentsList article_id={article_id}/>
+        <CommentForm setComments={setComments} article_id={article_id}/>
+        <CommentsList article_id={article_id} setComments={setComments} comments={comments}/>
       </section>
     </div>
       

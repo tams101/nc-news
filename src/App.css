@@ -46,6 +46,22 @@ header {
   margin: auto;
 }
 
+/* Comments Form */
+.comment-form {
+  margin-top: 20px;
+}
+
+.comment-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-form button {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 /* Comments List */
 .comment-list-item {
   border: 1px solid;
@@ -54,4 +70,23 @@ header {
   padding: 6px;
   background-color: #F4FAFF ;
   border-radius: 8px;
+}
+
+/* Usercard*/
+.avatar {
+  height: 100px;
+}
+
+.user-card{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 6px;
+  border-top: 1px solid black;
+}
+
+/* Current User */
+.current-user {
+  text-align: center;
 }

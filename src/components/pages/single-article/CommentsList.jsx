@@ -2,9 +2,7 @@ import { useState, useEffect } from "react"
 import { getCommentsByArticleId } from "../../../../utils/api"
 import CommentCard from "./CommentCard"
 
-export default function CommentsList({article_id}) {
-
-  const [comments, setComments] = useState([])
+export default function CommentsList({article_id, setComments, comments}) {
   const [error, setError] = useState(null)
   const [loading, setIsLoading] = useState(true)
 
@@ -17,7 +15,7 @@ export default function CommentsList({article_id}) {
       setError('Comments could not be retrieved.')
       setIsLoading(false)
     })
-  },  [article_id])
+  },  [comments])
 
   if(loading) return <p>Loading comments...</p>
   if(error) return <p>{error}</p>
