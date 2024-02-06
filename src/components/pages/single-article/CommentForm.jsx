@@ -24,10 +24,17 @@ export default function CommentForm({ article_id, setComments }) {
         setComments((currentComments) => {
           return [addedComment, ...currentComments];
         });
+        setTimeout(() => {
+          setSubmitted(false)
+        }, 2000)
       })
       .catch((err) => {
         setError("Comment could not be posted. Try again later.");
+        setSubmitted(false)
+        setIsPosting(false)
       });
+
+
   }
 
   function handleCommentChange(e) {

@@ -13,6 +13,7 @@ export default function SingleArticle() {
   const [fetchError, setFetchError] = useState(null)
   const [voteError, setVoteError] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [disableBtn, setDisableBtn] = useState(false)
 
   useEffect(() => {
     getArticleById(article_id).then((singleArticle) => {
@@ -28,6 +29,7 @@ export default function SingleArticle() {
 
   function handleClick(e) {
     const vote = +e.target.value
+    setDisableBtn(true)
     patchVotesByArticleId(article_id, vote).then(() => {
       setVoteError(null)
     }).catch((err) => {
@@ -35,6 +37,7 @@ export default function SingleArticle() {
         return currentVotes - vote
       })
       setVoteError("Voting not available. Please try again later.")
+      setDisableBtn(false)
     })
 
     setVotes((currentVotes) => {
@@ -59,8 +62,8 @@ export default function SingleArticle() {
         <p>Date posted: {formatDate}</p>
         <p>{article.body}</p>
         <p>Votes: {votes}</p>
-        <button onClick={handleClick} value={1}>Upvote</button>
-        <button onClick={handleClick} value={-1}>Downvote</button>
+        <button onClick={handleClick} value={1} disabled={disableBtn}>Upvote</button>
+        <button onClick={handleClick} value={-1} disabled={disableBtn}>Downvote</button>
       </section>
 
       <section className="comments-container">
