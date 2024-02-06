@@ -4,6 +4,10 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+button {
+  font-family: 'Inter', sans-serif;
+}
+
 header {
   height: 100px;
 }
@@ -93,4 +97,17 @@ textarea {
 /* Current User */
 .current-user {
   text-align: center;
+}
+
+/* Topic selector */
+.topic-selector-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.topic-selector-form select {
+  width: 150px;
 }

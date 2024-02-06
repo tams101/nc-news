@@ -26,6 +26,7 @@ function App() {
           <Route path="/articles/:article_id" element={<SingleArticle />} />
           <Route path="/profile/:username" element={<CurrentUser/>} />
           <Route path="/change-user" element={<ChangeUser/>} />
+          <Route path="/topic/:topic_name" element={<ArticlesList />} />
         </Routes>
       </main>
       </UserContext.Provider>
