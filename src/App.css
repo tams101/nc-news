@@ -15,7 +15,8 @@ header {
 /* Navbar */
 .nav-items {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
   padding-left: 0;
 }
 
@@ -110,4 +111,15 @@ textarea {
 
 .topic-selector-form select {
   width: 150px;
+}
+
+/* Sort By  */
+.sort-by-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sort-by-container {
+  margin-bottom: 10px;
 }
