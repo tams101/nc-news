@@ -22,7 +22,7 @@ export default function CommentsList({article_id, setComments, comments}) {
 
   return (
     <div className="comments-list-container">
-      <h3>Comments</h3>
+      <h3>Comments ({comments.length}) </h3>
       {comments.map((comment) => {
         return <CommentCard comment={comment} key={comment.comment_id} setComments={setComments}/>
       })}
