@@ -4,6 +4,7 @@ import ArticleCard from "./ArticleCard";
 import Topics from "./Topics";
 import { useParams, useSearchParams } from "react-router-dom";
 import SortBy from "./SortBy";
+import ErrorComponent from "../../ErrorComponent";
 
 export default function ArticlesList() {
   const [articles, setArticles] = useState([])
@@ -24,14 +25,20 @@ export default function ArticlesList() {
       setIsLoading(false)
       setError(null)
     }).catch((err) => {
-      setError('Error fetching data');
+      if(err.code === 'ERR_NETWORK') {
+        setError({status: 'Network Error', msg: 'Please check your internet connection.'})
+      } else {
+        const errorMsg = err.response.data.msg
+        const errorCode = err.response.status
+        setError({status: errorCode, msg: errorMsg});
+      }
       setIsLoading(false)
     })
   }, [topic_name, sort_by, order])
 
   if (isLoading) return <p>Loading articles...</p>
 
-  if (error) return <p>{error}</p>
+  if (error) return <ErrorComponent err={error}/>
 
   return (
     <div className="articles-list-container">

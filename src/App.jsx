@@ -8,6 +8,7 @@ import UserContext from './contexts/UserContext'
 import { useState } from 'react'
 import ChangeUser from './components/pages/ChangeUser'
 import CurrentUser from './components/pages/CurrentUser'
+import NotFound from './components/NotFound'
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({
@@ -27,6 +28,7 @@ function App() {
           <Route path="/profile/:username" element={<CurrentUser/>} />
           <Route path="/change-user" element={<ChangeUser/>} />
           <Route path="/topic/:topic_name" element={<ArticlesList />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       </UserContext.Provider>
