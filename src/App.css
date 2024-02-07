@@ -66,6 +66,11 @@ header {
   margin-right: auto;
 }
 
+.add-comment-error {
+  color: rgb(171, 0, 0);
+  font-size: 0.8rem;
+}
+
 textarea {
   resize:none;
 }

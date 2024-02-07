@@ -54,6 +54,7 @@ export default function CommentForm({ article_id, setComments }) {
           onChange={handleCommentChange}
           disabled={submitted}
         ></textarea>
+        {newComment.length > 0 && newComment.length < 4 && <p className="add-comment-error">Your comment must be more than 3 characters long</p>}
         <button type="submit" disabled={newComment.length < 4}>
           Submit Comment
         </button>

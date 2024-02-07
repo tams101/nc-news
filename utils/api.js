@@ -5,12 +5,6 @@ const newsApi = axios.create({
 });
 
 export function getArticles(topic_name, sort_by, order) {
-  // let articlesURL = `/articles`;
-
-  // if (topic_name !== undefined) {
-  //   articlesURL += `?topic=${topic_name}`;
-  // }
-
   return newsApi.get('/articles', {
     params: {
       topic: topic_name,

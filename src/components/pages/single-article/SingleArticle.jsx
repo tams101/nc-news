@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { getArticleById, patchVotesByArticleId } from "../../../../utils/api"
 import CommentsList from "./CommentsList"
 import CommentForm from "./CommentForm"
+import ErrorComponent from "../../ErrorComponent"
 
 export default function SingleArticle() {
   const {article_id} = useParams()
@@ -14,6 +15,7 @@ export default function SingleArticle() {
   const [voteError, setVoteError] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [disableBtn, setDisableBtn] = useState(false)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     getArticleById(article_id).then((singleArticle) => {
@@ -22,7 +24,13 @@ export default function SingleArticle() {
       setIsLoading(false)
       setFetchError(null)
     }).catch((err) => {
-      setFetchError('Error fetching article')
+      if(err.code === 'ERR_NETWORK') {
+        setError({status: 'Network Error', msg: 'Please check your internet connection.'})
+      } else {
+        const errorMsg = err.response.data.msg
+        const errorCode = err.response.status
+        setFetchError({status: errorCode, msg: errorMsg})
+      }
       setIsLoading(false)
     })
   }, [article_id])
@@ -46,7 +54,8 @@ export default function SingleArticle() {
   }
 
   if (isLoading) return <p>Loading article...</p>
-  if(fetchError) return <p>{fetchError}</p>
+  if(fetchError) return <ErrorComponent err={fetchError}/>
+  if(error) return <ErrorComponent err={error}/>
   if(voteError) return <p>{voteError}</p>
 
   const date = new Date(article.created_at)
