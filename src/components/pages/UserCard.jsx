@@ -13,7 +13,7 @@ export default function UserCard({user}) {
     {user.username !== loggedInUser.username ? 
     (<button onClick={() => {
       setLoggedInUser(user)
-    }}>Login</button>) : null}
+    }}>Login</button>) : <p>You are currently logged in</p>}
     </div>
   )
   

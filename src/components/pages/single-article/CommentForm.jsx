@@ -42,7 +42,7 @@ export default function CommentForm({ article_id, setComments }) {
   }
 
   return (
-    <section className="comment-form">
+    <div className="comment-form">
       <form method="post" onSubmit={handleSubmit}>
         <label htmlFor="add-comment">Add a comment:</label>
         <textarea
@@ -55,13 +55,13 @@ export default function CommentForm({ article_id, setComments }) {
           disabled={submitted}
         ></textarea>
         {newComment.length > 0 && newComment.length < 4 && <p className="add-comment-error">Your comment must be more than 3 characters long</p>}
-        <button type="submit" disabled={newComment.length < 4}>
+        <button id="submit-comment-btn"type="submit" disabled={newComment.length < 4}>
           Submit Comment
         </button>
         {isPosting && <p>Your comment is being added...</p>}
         {submitted && <p>Your comment has been posted!</p>}
         {error && <p>{error}</p>}
       </form>
-    </section>
+    </div>
   );
 }

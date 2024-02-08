@@ -71,8 +71,8 @@ export default function SingleArticle() {
         <p>Date posted: {formatDate}</p>
         <p>{article.body}</p>
         <p>Votes: {votes}</p>
-        <button onClick={handleClick} value={1} disabled={disableBtn}>Upvote</button>
-        <button onClick={handleClick} value={-1} disabled={disableBtn}>Downvote</button>
+        <button className="vote-btn"onClick={handleClick} value={1} disabled={disableBtn}>Upvote</button>
+        <button className="vote-btn" onClick={handleClick} value={-1} disabled={disableBtn}>Downvote</button>
       </section>
 
       <section className="comments-container">

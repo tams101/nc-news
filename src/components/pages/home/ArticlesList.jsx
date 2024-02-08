@@ -41,12 +41,14 @@ export default function ArticlesList() {
   if (error) return <ErrorComponent err={error}/>
 
   return (
-    <div className="articles-list-container">
+    <section>
      <Topics  />
      <SortBy setSearchParams={setSearchParams}/>
+    <div className="articles-list-container">
         {articles.map((article) => {
             return <ArticleCard article={article} key={article.article_id}/>
         })}
     </div>
+    </section>
   )
 }

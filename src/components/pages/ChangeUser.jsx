@@ -26,7 +26,7 @@ export default function Users() {
   if(error) return <ErrorComponent err={error}/>
 
   return (
-    <main>
+    <section className="change-user-container">
       <h2>Change User</h2>
       <ul>
         {users.map((user) => {
@@ -35,6 +35,6 @@ export default function Users() {
           )
         })}
       </ul>
-    </main>
+    </section>
   )
 }

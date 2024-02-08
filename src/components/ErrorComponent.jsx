@@ -5,7 +5,7 @@ export default function ErrorComponent({err}) {
     <div className="error-container">
       <h2>Something went wrong...</h2>
       <p>{err.status}: {err.msg}</p>
-      <p>Go to the <Link to="/">homepage</Link></p>
+      <p>Go to the <Link to="/"><span id="err-homepage-link">homepage</span></Link></p>
     </div>
   )
 }

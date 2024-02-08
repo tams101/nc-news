@@ -1,20 +1,58 @@
 body {
   margin: 0;
-  padding: 10px;
   font-family: 'Inter', sans-serif;
+  background-color: #edf2f4;
 }
 
 button {
   font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
-header {
-  height: 100px;
+button:hover {
+  background-color: white;
+  color: black;
+  transition: 0.3s;
+  border: 0.5px solid grey; 
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
 }
 
 /* Navbar */
+header {
+  height: 100px;
+  margin-top: 0;
+  background-color: black;
+  color: white;
+}
+
+header h1 {
+  padding-top: 6px;
+  margin-top: 0;
+  margin-left: 20px;
+}
+
+header a:hover {
+  background-color: white;
+  color: black;
+  transition: 0.3s;
+}
+
 .nav-items {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   padding-left: 0;
@@ -22,8 +60,8 @@ header {
 
 .nav-items li {
   list-style: none;
-  border: 1px solid red;
   border-radius: 4px;
+  text-transform: uppercase;
 }
 
 /* Article card */
@@ -32,23 +70,50 @@ header {
   border-radius: 6px;
 }
 
+.articles-list-container {
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr 1fr;
+}
+
 .article-list-item {
   text-align: center;
   border: 1px solid grey;
-  margin-bottom: 6px;
+  background-color: white;
+  margin-bottom: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   border-radius: 4px;
+
 }
 
 /* Single Article */
 .single-article-container {
   border: 1px solid grey;
-  padding: 10px;
+  margin: 10px;
+  padding: 12px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.single-article-container h2 {
+  margin-top: 0;
 }
 
 .single-article-img {
   width: 300px;
   display: block;
   margin: auto;
+  border-radius: 6px;
+}
+
+.vote-btn {
+  margin-right: 5px;
+}
+
+/* Comments Container */
+.comments-container {
+  margin: 10px;
 }
 
 /* Comments Form */
@@ -59,6 +124,10 @@ header {
 .comment-form form {
   display: flex;
   flex-direction: column;
+}
+
+.comment-form textarea {
+  border-radius: 10px;
 }
 
 .comment-form button {
@@ -75,15 +144,56 @@ textarea {
   resize:none;
 }
 
+#submit-comment-btn {
+  margin-top: 6px;
+}
+
 
 /* Comments List */
 .comment-list-item {
-  border: 1px solid;
   margin-top: 10px;
   margin-bottom: 8px;
   padding: 6px;
   background-color: #F4FAFF ;
   border-radius: 8px;
+  box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+}
+
+/* Comment card */
+.comment-author {
+  font-weight: bold;
+}
+
+.comment-body {
+  font-size: 0.85rem;
+}
+
+.comment-votes {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.comment-date {
+  font-size: 0.7rem;
+  padding-top: 2px;
+}
+
+.comment-author, .comment-body, .comment-date {
+  margin: 2px 0px;
+}
+
+.delete-comment-btn {
+  font-size: 0.7rem;
+  padding: 6px;
+  margin-right: 0;
+  margin-left: auto;
+  display: block;
+}
+
+.delete-comment-err {
+  color: rgb(196, 7, 7);
 }
 
 /* Usercard*/
@@ -93,10 +203,11 @@ textarea {
 
 .user-card{
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   align-items: center;
   margin-bottom: 20px;
-  padding: 6px;
+  padding: 20px;
   border-top: 1px solid black;
 }
 
@@ -105,10 +216,23 @@ textarea {
   text-align: center;
 }
 
+/* Change user */
+.change-user-container ul {
+  padding-left: 0;
+}
+
+.change-user-container h2 {
+  text-align: center;
+}
+
 /* Topic selector */
+.topic-selector-container {
+  margin-top: 10px;
+}
 .topic-selector-form {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  justify-content: center;
   gap: 6px;
   align-items: center;
   margin-bottom: 10px;
@@ -117,6 +241,12 @@ textarea {
 .topic-selector-form select {
   width: 150px;
 }
+
+.topic-selector-form label, .sort-by-form label {
+  font-size: 0.85rem;
+}
+
+
 
 /* Sort By  */
 .sort-by-form {
@@ -127,4 +257,39 @@ textarea {
 
 .sort-by-container {
   margin-bottom: 10px;
+}
+
+/* Error Container */
+
+#err-homepage-link {
+  color: black;
+}
+
+/* Responsive design */
+
+@media only screen and (max-width: 450px) {
+  .nav-items {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  header {
+    height: 150px;
+  }
+
+  .articles-list-container {
+    display: block
+  }
+
+  /* .change-user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  } */
+
+  .user-card {
+    flex-direction: column;
+  }
+
 }
