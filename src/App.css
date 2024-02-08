@@ -246,8 +246,6 @@ textarea {
   font-size: 0.85rem;
 }
 
-
-
 /* Sort By  */
 .sort-by-form {
   display: flex;
@@ -257,6 +255,28 @@ textarea {
 
 .sort-by-container {
   margin-bottom: 10px;
+}
+
+/* Change page */
+.change-page-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.change-page-container button {
+  margin: 12px;
+  font-size: 12px;
+  background-color: lightslategrey;
+}
+
+.change-page-container button:hover {
+  background-color: white;
+}
+
+#prev-page-btn:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
 }
 
 /* Error Container */
