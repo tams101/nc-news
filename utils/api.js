@@ -29,6 +29,10 @@ export function getCommentsByArticleId(article_id) {
   });
 }
 
+export function patchCommentVotesById(comment_id, vote) {
+  return newsApi.patch(`/comments/${comment_id}`, { inc_votes: vote });
+}
+
 export function patchVotesByArticleId(article_id, vote) {
   return newsApi.patch(`/articles/${article_id}`, { inc_votes: vote });
 }

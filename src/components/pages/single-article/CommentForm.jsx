@@ -60,7 +60,7 @@ export default function CommentForm({ article_id, setComments }) {
         </button>
         {isPosting && <p>Your comment is being added...</p>}
         {submitted && <p>Your comment has been posted!</p>}
-        {error && <p>{error}</p>}
+        {error && <p className="error">{error}</p>}
       </form>
     </section>
   );
