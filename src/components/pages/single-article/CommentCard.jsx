@@ -36,8 +36,8 @@ export default function CommentCard({comment}) {
 
       <div className="comment-list-item">
       <p className="comment-author">{comment.author}</p>
-      <p className="comment-body">{comment.body}</p>
       <p className="comment-date">{formatDate}</p>
+      <p className="comment-body">{comment.body}</p>
       <p className="comment-votes">Votes: {comment.votes}</p>
       {loggedInUser.username === comment.author ? <button onClick={handleDelete}disabled={submitted} className="delete-comment-btn">Delete</button> : null}
       {error && <p class="delete-comment-err">Your comment could not be deleted.</p>}

@@ -15,6 +15,7 @@ export default function SingleArticle() {
   const [voteError, setVoteError] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [disableBtn, setDisableBtn] = useState(false)
+  const [hasVoted, setHasVoted] = useState(false)
   const [error, setError] = useState(null)
 
   useEffect(() => {
@@ -46,8 +47,9 @@ export default function SingleArticle() {
       })
       setVoteError("Voting not available. Please try again later.")
       setDisableBtn(false)
+      setHasVoted((hasVoted) => !hasVoted)
     })
-
+    setHasVoted((hasVoted) => !hasVoted)
     setVotes((currentVotes) => {
         return currentVotes + vote
     })
@@ -66,13 +68,17 @@ export default function SingleArticle() {
       <section className="single-article-container">
         <h2>{article.title}</h2>
         <img className="single-article-img" src={article.article_img_url}/>
+        <div className="single-article-details">
         <p className="single-article-detail">Topic: {article.topic}</p>
         <p className="single-article-detail">Author: {article.author}</p>
-        <p>Date posted: {formatDate}</p>
-        <p>{article.body}</p>
+        <p className="single-article-detail">{formatDate}</p>
+
+        </div>
+        <p className="single-article-body">{article.body}</p>
         <p>Votes: {votes}</p>
-        <button className="vote-btn"onClick={handleClick} value={1} disabled={disableBtn}>Upvote</button>
-        <button className="vote-btn" onClick={handleClick} value={-1} disabled={disableBtn}>Downvote</button>
+        <button className="vote-btn"onClick={handleClick} value={1} disabled={disableBtn}>&#8593; +1</button>
+        <button className="vote-btn" onClick={handleClick} value={-1} disabled={disableBtn}>&#8595; -1</button>
+        {hasVoted && <p>Thanks for voting!</p>}
       </section>
 
       <section className="comments-container">

@@ -8,9 +8,9 @@ export default function CurrentUser() {
   return (
     <div className="current-user">
       <h2>My Profile</h2>
-      <h3>{loggedInUser.username}</h3>
-      <h4>{loggedInUser.name}</h4>
-      <img src={loggedInUser.avatar_url} className="avatar"/>
+      <p>{loggedInUser.username}</p>
+      <p>{loggedInUser.name}</p>
+      <img src={loggedInUser.avatar_url} className="current-user-avatar"/>
     </div>
     )
 }
