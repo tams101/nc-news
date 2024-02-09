@@ -11,9 +11,9 @@ export default function Navbar() {
     <nav>
       <ul className="nav-items">
         <li>Hello, {loggedInUser.username}!</li>
-        <Link to={`/profile/${loggedInUser.username}`}><li>My Profile</li></Link>
-        <Link to="/"><li>Home</li></Link> 
-        <Link to="change-user"><li>Change User</li></Link>
+        <li><Link to={`/profile/${loggedInUser.username}`}>My Profile</Link></li>
+        <li><Link to="/">Home</Link></li> 
+        <li><Link to="change-user">Change User</Link></li>
       </ul>
     </nav>
     </header>

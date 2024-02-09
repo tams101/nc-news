@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   background-color: #edf2f4;
+  color: #444444;
   margin-bottom: 20px;
   font-size: 18px;
 }
@@ -31,6 +32,7 @@ a {
   text-decoration: none;
   color: black;
   font-weight: bold;
+  padding: 10px;
 }
 
 select {
@@ -76,7 +78,7 @@ header a:hover {
   list-style: none;
   border-radius: 10px;
   text-transform: uppercase;
-  padding: 10px;
+  margin: 10px;
 }
 
 /* Article card */
@@ -97,7 +99,7 @@ header a:hover {
 
 .article-item-heading {
   height: fit-content;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
   margin-left: 4px;
   margin-right: 4px;
 }
@@ -141,7 +143,7 @@ header a:hover {
 /* Single Article */
 .single-article-container {
   /* border: 1px solid grey; */
-  margin: 10px;
+  margin: 40px;
   padding: 12px;
   background-color: white;
   border-radius: 6px;
@@ -181,7 +183,7 @@ header a:hover {
 
 /* Comments Container */
 .comments-container {
-  margin: 10px;
+  margin: 40px;
 }
 
 /* Comments Form */

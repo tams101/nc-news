@@ -28,13 +28,13 @@ export default function Users() {
   return (
     <section className="change-user-container">
       <h2>Change User</h2>
-      <ul>
+      <article className="users-container">
         {users.map((user) => {
           return (
               <UserCard user={user} key={user.username} />
           )
         })}
-      </ul>
+      </article>
     </section>
   )
 }

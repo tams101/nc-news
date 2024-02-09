@@ -115,11 +115,11 @@ export default function ArticlesList() {
         </button>
       </div>
 
-      <div className="articles-list-container">
+      <section className="articles-list-container">
         {articles.map((article) => {
           return <ArticleCard article={article} key={article.article_id} />;
         })}
-      </div>
+      </section>
     </section>
   );
 }
