@@ -166,8 +166,8 @@ header a:hover {
 }
 
 .single-article-body {
-  line-height: 1.5;
-  padding: 10px;
+  line-height: 1.6;
+  padding: 0 80px;
 }
 
 .vote-btn {
@@ -234,6 +234,7 @@ textarea {
   background-color: #F4FAFF ;
   border-radius: 8px;
   box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1);
+  font-size: 1rem;
 }
 
 /* Comment card */
@@ -256,12 +257,16 @@ textarea {
   margin: auto;
   padding: 8px;
   border-radius: 8px;
+  font-size: 0.85rem;
 }
 
 .comment-date {
   font-size: 0.85rem;
   padding-top: 2px;
-  
+}
+
+.comment-body {
+  padding: 10px 80px 0px 0px;
 }
 
 .comment-author, .comment-body, .comment-date {
@@ -426,6 +431,11 @@ textarea {
     width: 80%
   }
 
+  .sort-by-form {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
   .user-card {
     flex-direction: column;
     width: auto;
@@ -443,6 +453,22 @@ textarea {
     max-width: 100%;
   }
 
+  .single-article-details {
+    flex-wrap: wrap;
+  }
+
+  .single-article-body {
+    margin-top: 10px;
+    padding: 0 8px;
+  }
+
+  .single-article-detail {
+    margin: 8px;
+  }
+
+  .comment-body {
+    padding: 2px;
+  }
 }
 
 @media only screen and (max-width: 1050px) and (min-width: 451px) {
@@ -457,5 +483,17 @@ textarea {
 
   .comment-form {
     width: fit-content;
+  }
+
+  .single-article-img {
+    max-width: 100%;
+  }
+
+  .single-article-body {
+    padding: 0 20px;
+  }
+
+  .comment-body {
+    padding: 0
   }
 }
