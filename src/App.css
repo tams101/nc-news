@@ -174,7 +174,7 @@ header a:hover {
 .single-article-body {
   line-height: 1.6;
   padding: 0 80px;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
 .article-vote-container {
@@ -258,7 +258,7 @@ textarea {
   background-color: #F4FAFF ;
   border-radius: 8px;
   box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1);
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 /* Comment card */
@@ -455,6 +455,21 @@ textarea {
     height: fit-content;
   }
 
+  header h1 {
+    margin-bottom: 0px;
+  }
+
+  .nav-items {
+    margin-top: 2px;
+  }
+
+  .nav-items > li {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+
   .articles-list-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -489,6 +504,10 @@ textarea {
     max-width: 100%;
   }
 
+  .single-article-container, .comments-container{
+    margin: 10px;
+  }
+
   .single-article-details {
     flex-wrap: wrap;
   }
@@ -496,6 +515,7 @@ textarea {
   .single-article-body {
     margin-top: 10px;
     padding: 0 8px;
+    font-size: 1rem;
   }
 
   .single-article-detail {
@@ -504,6 +524,7 @@ textarea {
 
   .comment-body {
     padding: 2px;
+    font-size: 0.95rem;
   }
 }
 
@@ -527,6 +548,11 @@ textarea {
 
   .single-article-body {
     padding: 0 20px;
+    font-size: 1.1rem;
+  }
+
+  .comment-body {
+    font-size: 1rem;
   }
 
   .comment-body {
