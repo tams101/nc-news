@@ -42,7 +42,7 @@ export default function CommentForm({ article_id, setComments }) {
   }
 
   return (
-    <div className="comment-form">
+    <section className="comment-form">
       <form method="post" onSubmit={handleSubmit}>
         <label htmlFor="add-comment">Add a comment:</label>
         <textarea
@@ -62,6 +62,6 @@ export default function CommentForm({ article_id, setComments }) {
         {submitted && <p>Your comment has been posted!</p>}
         {error && <p>{error}</p>}
       </form>
-    </div>
+    </section>
   );
 }

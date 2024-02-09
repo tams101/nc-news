@@ -21,11 +21,11 @@ export default function CommentsList({article_id, setComments, comments}) {
   if(error) return <p>{error}</p>
 
   return (
-    <div className="comments-list-container">
+    <section className="comments-list-container">
       <h3>Comments ({comments.length}) </h3>
       {comments.map((comment) => {
         return <CommentCard comment={comment} key={comment.comment_id} setComments={setComments}/>
       })}
-    </div>
+    </section>
     )
 }
