@@ -58,7 +58,7 @@ export default function SingleArticle() {
   if (isLoading) return <p>Loading article...</p>
   if(fetchError) return <ErrorComponent err={fetchError}/>
   if(error) return <ErrorComponent err={error}/>
-  if(voteError) return <p>{voteError}</p>
+  if(voteError) return <p className="error">{voteError}</p>
 
   const date = new Date(article.created_at)
   const formatDate = date.toUTCString()
@@ -75,10 +75,13 @@ export default function SingleArticle() {
 
         </div>
         <p className="single-article-body">{article.body}</p>
-        <p>Votes: {votes}</p>
-        <button className="vote-btn" onClick={handleClick} value={1} disabled={disableBtn} aria-label="upvote">&#8593; +1</button>
-        <button className="vote-btn" onClick={handleClick} value={-1} disabled={disableBtn} aria-label="downvote">&#8595; -1</button>
+        <p id="article-votes">Votes: {votes}</p>
+        <div className="article-vote-container">
+        <button className="vote-btn" onClick={handleClick} value={1} disabled={disableBtn} aria-label="upvote-article">&#8593; +1</button>
+        <button className="vote-btn" onClick={handleClick} value={-1} disabled={disableBtn} aria-label="downvote-article">&#8595; -1</button>
         {hasVoted && <p>Thanks for voting!</p>}
+
+        </div>
       </article>
 
       <article className="comments-container">

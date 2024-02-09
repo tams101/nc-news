@@ -18,7 +18,7 @@ export default function CommentsList({article_id, setComments, comments}) {
   },  [])
 
   if(loading) return <p>Loading comments...</p>
-  if(error) return <p>{error}</p>
+  if(error) return <p className="error">{error}</p>
 
   return (
     <section className="comments-list-container">

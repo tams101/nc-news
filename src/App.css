@@ -47,6 +47,10 @@ select {
   font-weight: bold;
 }
 
+.error {
+  color: rgb(196, 7, 7);
+}
+
 /* Navbar */
 header {
   height: 120px;
@@ -170,6 +174,24 @@ header a:hover {
 .single-article-body {
   line-height: 1.6;
   padding: 0 80px;
+  font-size: 1.25rem;
+}
+
+.article-vote-container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6px;
+  text-align: center;
+}
+
+#article-votes {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  background-color: darkslategrey;
+  color:white;
+  padding: 5px;
+  border-radius: 4px;
 }
 
 .vote-btn {
@@ -236,7 +258,7 @@ textarea {
   background-color: #F4FAFF ;
   border-radius: 8px;
   box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1);
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 /* Comment card */
@@ -244,7 +266,6 @@ textarea {
   font-weight: bold;
   background-color: darkslategray;
   color: white;
-  font-size: 0.85rem;
   padding: 4px;
   border-radius: 4px;
   width: fit-content;
@@ -259,7 +280,8 @@ textarea {
   margin: auto;
   padding: 8px;
   border-radius: 8px;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 .comment-date {
@@ -273,6 +295,27 @@ textarea {
 
 .comment-author, .comment-body, .comment-date {
   margin: 8px 0px;
+}
+
+.comment-vote-container{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6px;
+  text-align: center;
+}
+
+#comment-upvote-btn {
+  margin-right: 6px;
+}
+
+.comment-vote-btn {
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.comment-vote-btn:disabled {
+  background-color: #cccccc;
+  color: #666666;
 }
 
 .delete-comment-btn {
@@ -290,9 +333,6 @@ textarea {
   border: 0.5px solid grey; 
 }
 
-.delete-comment-err {
-  color: rgb(196, 7, 7);
-}
 
 /* Usercard*/
 .avatar {
@@ -401,12 +441,6 @@ textarea {
 #prev-page-btn:disabled {
   background-color: #cccccc;
   color: #666666;
-}
-
-/* Error Container */
-
-#err-homepage-link {
-  color: black;
 }
 
 /* Responsive design */
