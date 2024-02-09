@@ -19,7 +19,7 @@ export default function SortBy({setSearchParams}) {
   return(
     <div className="sort-by-container">
       <form className="sort-by-form">
-        <label htmlFor="sort-by-items">Sort By:</label>
+        <label htmlFor="sort-by-items">Sort by:</label>
         <select onChange={handleSortByChange} id="sort-by-items">
           <option value='created_at'>Date</option>
           <option value='comment_count'>Comment Count</option>

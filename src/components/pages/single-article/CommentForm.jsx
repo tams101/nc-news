@@ -26,7 +26,7 @@ export default function CommentForm({ article_id, setComments }) {
         });
         setTimeout(() => {
           setSubmitted(false)
-        }, 2000)
+        }, 4000)
       })
       .catch((err) => {
         setError("Comment could not be posted. Try again later.");

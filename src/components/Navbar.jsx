@@ -10,8 +10,9 @@ export default function Navbar() {
     <h1>NC News</h1>
     <nav>
       <ul className="nav-items">
-       <Link to="/"><li>Home</li></Link> 
-        <Link to={`/profile/${loggedInUser.username}`}><li>Current User: {loggedInUser.username}</li></Link>
+        <li>Hello, {loggedInUser.username}!</li>
+        <Link to={`/profile/${loggedInUser.username}`}><li>My Profile</li></Link>
+        <Link to="/"><li>Home</li></Link> 
         <Link to="change-user"><li>Change User</li></Link>
       </ul>
     </nav>

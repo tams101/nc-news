@@ -31,7 +31,7 @@ export default function Topics() {
       <form className="topic-selector-form">
       <label htmlFor="topic-selector">Choose a topic:</label>
      <select id="topic-selector" onChange={handleTopicChange}>
-        {!isLoading && error ? <option value="" disabled="true">{error}</option> : <option value="">-Select an option-</option>}
+        {!isLoading && error ? <option value="" disabled="true">{error}</option> : <option value="">-Select a topic-</option>}
         {isLoading ? (<option value="">Loading topics...</option>) : topics.map((topic) => {
           return <option key={topic.slug} value={topic.slug}>{topic.slug}</option>
         })}

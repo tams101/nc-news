@@ -10,6 +10,7 @@ export default function ArticlesList() {
   const [articles, setArticles] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
   const [page, setPage] = useState(1);
+  const [toggle, setToggle] = useState(true)
 
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -51,7 +52,6 @@ export default function ArticlesList() {
   }, [topic_name, sort_by, order, p, totalCount]);
 
   function handleChangePageClick(e) {
-    console.log(page);
     if (e.target.name === "prev-page") {
       setSearchParams(
         (currParams) => {
@@ -79,14 +79,23 @@ export default function ArticlesList() {
     }
   }
 
-  if (isLoading) return <p>Loading articles...</p>;
+  function handleToggle() {
+    setToggle((currState) => !currState)
+  }
 
+  if (isLoading) return <p>Loading articles...</p>;
   if (error) return <ErrorComponent err={error} />;
 
   return (
     <section>
-      <Topics />
-      <SortBy setSearchParams={setSearchParams} />
+      <button id="filter-btn" onClick={handleToggle}>Filter articles</button>
+      {toggle ? null : 
+        <>
+        <Topics />
+        <SortBy setSearchParams={setSearchParams} />
+        </>
+      }
+      
       <div className="change-page-container">
         <button
           onClick={handleChangePageClick}
@@ -100,6 +109,7 @@ export default function ArticlesList() {
           onClick={handleChangePageClick}
           disabled={10 * page >= totalCount}
           name="next-page"
+          id="next-page-btn"
         >
           Next Page
         </button>
