@@ -1,5 +1,5 @@
 import { useState, useContext } from "react"
-import UserContext from "../../../contexts/UserContext"
+import { UserContext } from "../../../contexts/UserContext"
 import { deleteAComment, patchCommentVotesById } from "../../../../utils/api"
 
 export default function CommentCard({comment}) {
