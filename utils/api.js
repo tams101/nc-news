@@ -17,6 +17,18 @@ export function getArticles(topic_name, sort_by, order, p) {
   });
 }
 
+export function postArticle(title, topic, author, body, article_img_url) {
+  return newsApi.post('/articles', {
+    title,
+    topic,
+    author,
+    body,
+    article_img_url
+  }).then((res) => {
+    return res.data
+  })
+}
+
 export function getArticleById(article_id) {
   return newsApi.get(`/articles/${article_id}`).then((res) => {
     return res.data.article;
@@ -57,4 +69,11 @@ export function getTopics() {
   return newsApi.get("/topics").then((res) => {
     return res.data.topics;
   });
+}
+
+export function addNewTopic(slug, description) {
+  return newsApi.post("/topics", {
+    slug,
+    description
+  })
 }
