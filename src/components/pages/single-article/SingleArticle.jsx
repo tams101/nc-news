@@ -55,7 +55,7 @@ export default function SingleArticle() {
     })
   }
 
-  if (isLoading) return <p>Loading article...</p>
+  if (isLoading) return <p className="loading-msg">Loading article...</p>
   if(fetchError) return <ErrorComponent err={fetchError}/>
   if(error) return <ErrorComponent err={error}/>
   if(voteError) return <p className="error">{voteError}</p>
