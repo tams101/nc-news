@@ -6,7 +6,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 import SortBy from "./SortBy";
 import ErrorComponent from "../../ErrorComponent";
 
-export default function ArticlesList() {
+export default function ArticlesList({topics, setTopics}) {
   const [articles, setArticles] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
   const [page, setPage] = useState(1);
@@ -91,7 +91,7 @@ export default function ArticlesList() {
       <button id="filter-btn" onClick={handleToggle}>Filter articles</button>
       {toggle ? null : 
         <>
-        <Topics />
+        <Topics topics={topics} setTopics={setTopics} />
         <SortBy setSearchParams={setSearchParams} />
         </>
       }

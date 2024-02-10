@@ -48,6 +48,7 @@ select {
 }
 
 .error {
+  margin: 6px;
   color: rgb(196, 7, 7);
 }
 
@@ -443,6 +444,76 @@ textarea {
   color: #666666;
 }
 
+/* Create article */
+.article-form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.article-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: rgb(207, 211, 216);
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.article-form-container h2 {
+  text-align: center;
+}
+
+.article-form label {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.article-form input {
+  font-size: 1rem;
+  padding: 2px;
+  margin-bottom: 6px;
+  width: 500px;
+}
+
+#article-content {
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  width: 600px;
+  height: 250px;
+}
+
+#article-topic {
+  font-size: 1rem;
+}
+
+#article-word-count {
+  margin: 0;
+}
+
+#add-topic-btn {
+  font-size: 0.9rem;
+  padding: 6px;
+  color: #444444;
+  text-transform: lowercase;
+}
+
+#add-topic-btn:hover {
+  color: white;
+}
+
+#post-article-btn:disabled {
+  background-color: #cccccc;
+  color: #666666;
+}
+
+#posted-confirmation {
+  text-align: center;
+}
+
+
 /* Responsive design */
 
 @media only screen and (max-width: 450px) {
@@ -526,6 +597,19 @@ textarea {
     padding: 2px;
     font-size: 0.95rem;
   }
+
+  .article-form-container {
+    margin: 3px;
+  }
+
+  .article-form input {
+    width: 300px;
+  }
+  
+  #article-content {
+    width: 300px;
+    height: 200px;
+  }
 }
 
 @media only screen and (max-width: 1050px) and (min-width: 451px) {
@@ -557,5 +641,16 @@ textarea {
 
   .comment-body {
     padding: 0
+  }
+}
+
+@media only screen and (max-width: 665px) and (min-width: 452px) {
+  .article-form input {
+    width: 400px;
+  }
+  
+  #article-content {
+    width: 400px;
+    height: 200px;
   }
 }
