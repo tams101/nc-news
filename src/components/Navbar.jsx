@@ -1,10 +1,9 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom"
-import UserContext from "../contexts/UserContext"
+import { UserContext } from "../contexts/UserContext"
 
 export default function Navbar() {
   const {loggedInUser} = useContext(UserContext)
-
   return (
     <header>
     <h1>NC News</h1>

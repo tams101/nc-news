@@ -4,7 +4,6 @@ import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import ArticlesList from './components/pages/home/ArticlesList'
 import SingleArticle from './components/pages/single-article/SingleArticle'
-import UserContext from './contexts/UserContext'
 import { useState, useEffect } from 'react'
 import ChangeUser from './components/pages/ChangeUser'
 import CurrentUser from './components/pages/CurrentUser'
@@ -13,12 +12,6 @@ import AddArticle from './components/pages/AddArticle'
 import { getTopics } from '../utils/api'
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState({
-    username: "tickle122",
-    name: "Tom Tickle",
-    avatar_url: "https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953"
-  })
-
   const [topics, setTopics] = useState([])
   const [topicsLoading, setTopicsLoading] = useState(true)
   const [topicsError, setTopicsError] = useState(null)
@@ -36,7 +29,6 @@ function App() {
 
   return (
     <div className='app-container'>
-      <UserContext.Provider value={{loggedInUser, setLoggedInUser}}>
       <Navbar />
       <main>
         <Routes>
@@ -49,7 +41,6 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      </UserContext.Provider>
     </div>
   )
 }

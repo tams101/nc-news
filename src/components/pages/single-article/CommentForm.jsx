@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { addCommentByArticleId } from "../../../../utils/api";
-import UserContext from "../../../contexts/UserContext";
+import { UserContext } from "../../../contexts/UserContext";
 
 export default function CommentForm({ article_id, setComments }) {
   const { loggedInUser } = useContext(UserContext);
