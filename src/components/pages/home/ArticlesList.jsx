@@ -83,7 +83,7 @@ export default function ArticlesList({topics, setTopics}) {
     setToggle((currState) => !currState)
   }
 
-  if (isLoading) return <p>Loading articles...</p>;
+  if (isLoading) return <p className="loading-msg">Loading articles...</p>;
   if (error) return <ErrorComponent err={error} />;
 
   return (
