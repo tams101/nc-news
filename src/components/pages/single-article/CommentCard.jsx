@@ -49,7 +49,7 @@ export default function CommentCard({comment}) {
   }
 
   if (inProgress) return <p>Your comment is being deleted...</p>
-  if (isDeleted) return <p>Your comment was removed.</p>
+  if (isDeleted) return <p className="delete-item-confirmation">Your comment was deleted.</p>
 
   return (
 
@@ -64,7 +64,7 @@ export default function CommentCard({comment}) {
         {voteError && <p className="error">{voteError}</p>}
         </div>
         {loggedInUser.username === comment.author ? <button onClick={handleDelete}disabled={submitted} className="delete-comment-btn">Delete</button> : null}
-        {error && <p class="error">{error}</p>}
+        {error && <p className="error">{error}</p>}
     </div>
     
   )
